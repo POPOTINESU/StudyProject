@@ -1,36 +1,50 @@
 package CS.Basic.function;
 
 public class CalculateCorporationTax {
+    private static final double DEFAULT_STATE_TAX_RATE = 0.05;
+    private static final double FEDERAL_TAX_RATE = 0.21;
+    private static final double ARIZONA_TAX_RATE = 0.049;
+    private static final double CALIFORNIA_TAX_RATE = 0.0884;
+    private static final double TEXAS_TAX_RATE = 0;
+    private static final double NORTH_CAROLINA_TAX_RATE = 0.025;
+
     public static int calculateCorporationTax(String state, int year, int profit) {
-        return (int) Math.ceil(calculateFederalTax(profit, isLeapYear(year)) + calculateStateTax(profit, state));
+        double federalTax = calculateFederalTax(profit, isLeapYear(year));
+        double stateTax = calculateStateTax(profit, state);
+        return (int) Math.ceil(federalTax + stateTax);
     }
 
     public static boolean isLeapYear(int year) {
         return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
     }
 
-    public static double calculateFederalTax(int profit, boolean is_leap_year) {
-        double FEDERAL_TAX = 0.21;
-        if (is_leap_year) {
-            FEDERAL_TAX = 0;
+    public static double calculateFederalTax(int profit, boolean isLeapYear) {
+        if (isLeapYear) {
+            return 0;
         }
-        return profit * FEDERAL_TAX;
+        return profit * FEDERAL_TAX_RATE;
     }
 
     public static double calculateStateTax(int profit, String state) {
-        double state_tax_rate = 0.05;
-
-        if (state.equals("AZ")) {
-            state_tax_rate = 0.049;
-        } else if (state.equals("CA")) {
-            state_tax_rate = 0.0884;
-        } else if (state.equals("TX")) {
-            state_tax_rate = 0;
-        } else if (state.equals("NC")) {
-            state_tax_rate = 0.025;
+        double stateTaxRate;
+        switch (state) {
+            case "AZ":
+                stateTaxRate = ARIZONA_TAX_RATE;
+                break;
+            case "CA":
+                stateTaxRate = CALIFORNIA_TAX_RATE;
+                break;
+            case "TX":
+                stateTaxRate = TEXAS_TAX_RATE;
+                break;
+            case "NC":
+                stateTaxRate = NORTH_CAROLINA_TAX_RATE;
+                break;
+            default:
+                stateTaxRate = DEFAULT_STATE_TAX_RATE;
+                break;
         }
-
-        return profit * state_tax_rate;
+        return profit * stateTaxRate;
     }
 
     public static void main(String[] args) {
