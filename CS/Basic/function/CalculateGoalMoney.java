@@ -14,7 +14,6 @@ public class CalculateGoalMoney {
         // 複利計算: P(1 + i)^n
         double totalAmount = capital * Math.pow(1 + interestRate, year);
 
-        // 小数点以下切り捨て
         return (int) Math.floor(totalAmount);
     }
 
