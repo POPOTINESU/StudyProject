@@ -1,7 +1,7 @@
 package main
-import (
-    "fmt"
-)
+// import (
+//     "fmt"
+// )
 
 func numberOfDots(x int32) int32{
 	if x == 0 {
@@ -11,6 +11,6 @@ func numberOfDots(x int32) int32{
     return numberOfDots(x-1) + x
 }
 
-func main(){
-	fmt.Println(numberOfDots(10))
-}
+// func main(){
+// 	fmt.Println(numberOfDots(10))
+// }
