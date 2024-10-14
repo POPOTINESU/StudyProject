@@ -1,8 +1,8 @@
 package main
 
-import (
-	"fmt"
-)
+// import (
+// 	"fmt"
+// )
 
 func totalSquareArea(x int32) int32 {
 	if x == 0 {
@@ -16,6 +16,6 @@ func calculateSquareArea(side int) int {
 	return side * side
 }
 
-func main() {
-	fmt.Println(totalSquareArea(3))
-}
+// func main() {
+// 	fmt.Println(totalSquareArea(3))
+// }
