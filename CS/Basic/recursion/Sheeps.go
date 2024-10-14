@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+// 	"fmt"
 	"strconv"
 )
 
@@ -18,6 +18,6 @@ func formatSheep(count int) string {
 	return strconv.Itoa(int(count)) + " sheep " + "~ "
 }
 
-func main() {
-	fmt.Println(sheeps(2))
-}
+// func main() {
+// 	fmt.Println(sheeps(2))
+// }
