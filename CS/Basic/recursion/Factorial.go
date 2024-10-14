@@ -1,8 +1,8 @@
 package main
 
-import (
-	"fmt"
-)
+// import (
+// 	"fmt"
+// )
 
 func factorial(n int32) int64 {
 	i_64 := int64(n)
@@ -14,8 +14,8 @@ func factorial(n int32) int64 {
 	return factorial(int32(i_64)-1) * i_64
 }
 
-func main() {
-	var n int32
-	fmt.Scan(&n)
-	fmt.Println(factorial(n))
-}
+// func main() {
+// 	var n int32
+// 	fmt.Scan(&n)
+// 	fmt.Println(factorial(n))
+// }
