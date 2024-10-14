@@ -1,8 +1,8 @@
 package main
 
-import (
-	"fmt"
-)
+// import (
+// 	"fmt"
+// )
 
 func maximumPeople(x int32, y int32) int32 {
 	if y == 0 {
@@ -12,6 +12,6 @@ func maximumPeople(x int32, y int32) int32 {
 	return maximumPeople(y, x%y)
 }
 
-func main() {
-	fmt.Println(maximumPeople(12, 18))
-}
+// func main() {
+// 	fmt.Println(maximumPeople(12, 18))
+// }
