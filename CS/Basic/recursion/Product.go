@@ -1,8 +1,8 @@
 package main
 
-import (
-	"fmt"
-)
+// import (
+// 	"fmt"
+// )
 
 func product(x int32, y int32) int32 {
 	if x == 0 || y == 0 {
@@ -16,6 +16,6 @@ func product(x int32, y int32) int32 {
 	return product(x, y-1) + x
 }
 
-func main() {
-	fmt.Println(product(5, 3))
-}
+// func main() {
+// 	fmt.Println(product(5, 3))
+// }
