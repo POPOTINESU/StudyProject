@@ -1,8 +1,8 @@
 package main
 
-import (
-	"fmt"
-)
+// import (
+// 	"fmt"
+// )
 
 func simpleSummation(n int32) int32 {
 	if n == 0 {
@@ -11,8 +11,8 @@ func simpleSummation(n int32) int32 {
 	return simpleSummation(n-1) + n
 }
 
-func main() {
-	var n int32
-	fmt.Scan(&n)
-	fmt.Println(simpleSummation(n))
-}
+// func main() {
+// 	var n int32
+// 	fmt.Scan(&n)
+// 	fmt.Println(simpleSummation(n))
+// }
