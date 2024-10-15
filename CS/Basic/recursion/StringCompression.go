@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	// "fmt"
 	"strconv"
 )
 
@@ -27,6 +27,6 @@ func stringCount(target byte, s string, count int) int {
 	return stringCount(target, s[1:], count+1)
 }
 
-func main() {
-	fmt.Println(stringCompression("aaabbb"))
-}
+// func main() {
+// 	fmt.Println(stringCompression("aaabbb"))
+// }
