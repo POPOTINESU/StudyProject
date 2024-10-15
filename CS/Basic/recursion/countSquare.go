@@ -1,8 +1,8 @@
 package main
 
-import (
-	"fmt"
-)
+// import (
+// 	"fmt"
+// )
 
 func countSquare(x int32, y int32) int32 {
 	return calculateArea(x, y) / calculateArea(GCM(x, y), GCM(x,y))
@@ -20,6 +20,6 @@ func GCM(x int32, y int32) int32 {
 	return GCM(y, x%y)
 }
 
-func main() {
-	fmt.Println(countSquare(28, 32))
-}
+// func main() {
+// 	fmt.Println(countSquare(28, 32))
+// }
