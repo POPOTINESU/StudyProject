@@ -1,8 +1,8 @@
 package main
 
-import (
-	"fmt"
-)
+// import (
+// 	"fmt"
+// )
 
 func splitAndAdd(digits int32) int32 {
 	if (digits < 10){
@@ -12,6 +12,6 @@ func splitAndAdd(digits int32) int32 {
 	return digits % 10 + splitAndAdd(digits/10)
 }
 
-func main() {
-	fmt.Println(splitAndAdd(19))
-}
+// func main() {
+// 	fmt.Println(splitAndAdd(19))
+// }
