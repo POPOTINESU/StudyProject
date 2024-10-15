@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	// "fmt"
 	"math"
 )
 
@@ -23,6 +23,6 @@ func isSquareRootCloseEnough(guess float64, newGuess float64) bool {
 	return 100*math.Abs((guess-newGuess)/newGuess) < 0.001
 }
 
-func main() {
-	fmt.Println(intSquareRoot(12))
-}
+// func main() {
+// 	fmt.Println(intSquareRoot(12))
+// }
