@@ -1,6 +1,6 @@
 package main
 
-import "fmt"
+// import "fmt"
 
 func isPrime(number int32) bool {
 	if number == 1 {
@@ -19,6 +19,6 @@ func isPrime(number int32) bool {
 	return true
 }
 
-func main() {
-	fmt.Println(isPrime(4))
-}
+// func main() {
+// 	fmt.Println(isPrime(4))
+// }
