@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	// "fmt"
 	"strconv"
 )
 
@@ -20,6 +20,6 @@ func decimalToBinary(decNumber int32) string {
 	return decimalString
 }
 
-func main(){
-	fmt.Println(decimalToBinary(2))
-}
+// func main(){
+// 	fmt.Println(decimalToBinary(2))
+// }
