@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	// "fmt"
 )
 
 func redirectionUrl(language string) string {
@@ -20,6 +20,6 @@ func redirectionUrl(language string) string {
 	}
 }
 
-func main() {
-	fmt.Println(redirectionUrl("English"))
-}
+// func main() {
+// 	fmt.Println(redirectionUrl("English"))
+// }
