@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	// "fmt"
 	"strconv"
 )
 
@@ -22,6 +22,6 @@ func fizzBuzz(n int32) string {
 	return answer[0 : len(answer)-1]
 }
 
-func main(){
-	fmt.Println(fizzBuzz(7))
-}
+// func main(){
+// 	fmt.Println(fizzBuzz(7))
+// }
