@@ -1,6 +1,6 @@
 package main
 
-import "fmt"
+// import "fmt"
 
 func factorial(n int32) int64 {
 	i := 1
@@ -13,6 +13,6 @@ func factorial(n int32) int64 {
 	return int64(total)
 }
 
-func main() {
-	fmt.Println(factorial(15))
-}
+// func main() {
+// 	fmt.Println(factorial(15))
+// }
