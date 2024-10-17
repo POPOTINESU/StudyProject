@@ -1,8 +1,8 @@
 package main
 
-import (
-	"fmt"
-)
+// import (
+// 	"fmt"
+// )
 
 func hammingDistanceInString(string1 string, string2 string) int32 {
 	// 文字の数が同じである前提
@@ -24,6 +24,6 @@ func hammingDistanceInString(string1 string, string2 string) int32 {
 	return count
 }
 
-func main() {
-	fmt.Println(hammingDistanceInString("toned", "roses"))
-}
+// func main() {
+// 	fmt.Println(hammingDistanceInString("toned", "roses"))
+// }
