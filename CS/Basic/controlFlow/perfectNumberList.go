@@ -13,7 +13,9 @@ func perfectNumberList(n int32) string {
 		}
 	}
 
-
+	if len(answer) == 0{
+		return "none"
+	}
 	return answer[0: len(answer)-1]
 }
 
@@ -21,7 +23,7 @@ func isPerfectNumber(n int32) bool {
 
 	perfectNumber := 0
 
-	for i := 1; i <= int(n); i++ {
+	for i := 1; i < int(n); i++ {
 		if int(n)%i == 0 {
 			perfectNumber += i
 		}
