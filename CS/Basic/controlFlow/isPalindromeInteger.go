@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	// "fmt"
 	"strconv"
 )
 
@@ -17,6 +17,6 @@ func isPalindromeInteger(n int32) bool {
 	return true
 }
 
-func main() {
-	fmt.Println(isPalindromeInteger(121))
-}
+// func main() {
+// 	fmt.Println(isPalindromeInteger(121))
+// }
