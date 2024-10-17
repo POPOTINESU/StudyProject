@@ -1,17 +1,18 @@
 package main
 
-// import "fmt"
+import "fmt"
 
 func factorial(n int32) int64 {
-	// 今回forで繰り返す
-	result := 1
-	for i := 1; i <= int(n); i++ {
-		result *= i
+	i := 1
+	total := 1
+	for i < int(n)+1 {
+		total *= i
+		i += 1
 	}
 
-	return int64(result)
+	return int64(total)
 }
 
-// func main() {
-// 	fmt.Println(factorial(15))
-// }
+func main() {
+	fmt.Println(factorial(15))
+}
