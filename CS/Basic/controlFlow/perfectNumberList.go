@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	// "fmt"
 	"strconv"
 )
 
@@ -32,6 +32,6 @@ func isPerfectNumber(n int32) bool {
 	return perfectNumber == int(n)
 }
 
-func main() {
-	fmt.Println(perfectNumberList(1000))
-}
+// func main() {
+// 	fmt.Println(perfectNumberList(1000))
+// }
