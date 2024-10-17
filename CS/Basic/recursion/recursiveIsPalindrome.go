@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	// "fmt"
 	"strings"
 )
 
@@ -36,6 +36,6 @@ func stringReverse(s string) string {
 }
 
 
-func main(){
-	fmt.Println(recursiveIsPalindrome("Top spot"))
-}
+// func main(){
+// 	fmt.Println(recursiveIsPalindrome("Top spot"))
+// }
