@@ -1,8 +1,8 @@
 package main
 
-import (
-    "fmt"
-)
+// import (
+//     "fmt"
+// )
 
 func recursiveDigitsAdded(digits int64) int32 {
     if digits < 10 {
@@ -24,6 +24,6 @@ func divideTotalNumber(digits int64, currentSum int64, accumulatedSum int64) int
     return divideTotalNumber(digits/10, currentSum+(digits%10), accumulatedSum)
 }
 
-func main() {
-	fmt.Println(recursiveDigitsAdded(40830291317656))
-}
+// func main() {
+// 	fmt.Println(recursiveDigitsAdded(40830291317656))
+// }
