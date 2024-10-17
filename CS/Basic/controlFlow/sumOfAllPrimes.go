@@ -1,6 +1,6 @@
 package main
 
-import "fmt"
+// import "fmt"
 
 func sumOfAllPrimes(n int32) int32 {
 	benefits := 0
@@ -30,6 +30,6 @@ func isPrimeYear(year int32) bool {
 	return true
 }
 
-func main() {
-	fmt.Println(sumOfAllPrimes(1000))
-}
+// func main() {
+// 	fmt.Println(sumOfAllPrimes(1000))
+// }
