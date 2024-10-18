@@ -1,0 +1,1 @@
+return floor(double(minute) / 60.0 * 10) / 10;
