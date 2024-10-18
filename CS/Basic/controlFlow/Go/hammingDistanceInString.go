@@ -9,7 +9,7 @@ func hammingDistanceInString(string1 string, string2 string) int32 {
 	if len(string1) != len(string2) {
 		return 0
 	}
-	if len(string1) == 0{
+	if len(string1) == 0 {
 		return 0
 	}
 

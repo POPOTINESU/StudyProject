@@ -5,7 +5,7 @@ package main
 // )
 
 func countSquare(x int32, y int32) int32 {
-	return calculateArea(x, y) / calculateArea(GCM(x, y), GCM(x,y))
+	return calculateArea(x, y) / calculateArea(GCM(x, y), GCM(x, y))
 }
 
 func calculateArea(xSize int32, ySize int32) int32 {

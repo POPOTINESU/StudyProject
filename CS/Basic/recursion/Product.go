@@ -12,7 +12,7 @@ func product(x int32, y int32) int32 {
 	if y < 0 {
 		return product(x, y+1) - x
 	}
-	
+
 	return product(x, y-1) + x
 }
 

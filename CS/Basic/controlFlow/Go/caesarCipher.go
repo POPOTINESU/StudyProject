@@ -12,10 +12,10 @@ func caesarCipher(message string, n int32) string {
 	for i := 0; i < len(st); i++ {
 		char := st[i]
 
-		if char >= 'a' && char <= 'z'{
+		if char >= 'a' && char <= 'z' {
 			runeNum := rune(char) + rune(n%26)
 
-			if runeNum > 'z'{
+			if runeNum > 'z' {
 				runeNum -= 26
 			}
 

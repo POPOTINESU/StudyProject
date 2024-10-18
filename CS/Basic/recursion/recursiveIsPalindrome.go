@@ -35,7 +35,6 @@ func stringReverse(s string) string {
 	return string(rs)
 }
 
-
 // func main(){
 // 	fmt.Println(recursiveIsPalindrome("Top spot"))
 // }

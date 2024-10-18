@@ -12,7 +12,7 @@ func decimalToHexadecimal(decNumber int32) string {
 
 	HexDecimalString := ""
 	for decNumber > 0 {
-		HexDecimalString = convertDecimalToHexDecimal(decNumber % 16) + HexDecimalString
+		HexDecimalString = convertDecimalToHexDecimal(decNumber%16) + HexDecimalString
 		decNumber /= 16
 	}
 
@@ -42,4 +42,4 @@ func convertDecimalToHexDecimal(decimalNumber int32) string {
 // 	fmt.Println(decimalToHexadecimal(15))
 // 	fmt.Println(decimalToHexadecimal(0))
 // 	fmt.Println(decimalToHexadecimal(532454))
-// }	
+// }

@@ -16,7 +16,6 @@ func swapPosition(s string) string {
 	return string(s[1]) + string(s[0]) + swapPosition(s[2:])
 }
 
-
 // func main() {
 // 	fmt.Println(swapPosition("badce"))
 // }

@@ -4,12 +4,11 @@ package main
 
 func sumOfAllPrimes(n int32) int32 {
 	benefits := 0
-	for i := 1; i <= int(n); i +=1{
+	for i := 1; i <= int(n); i += 1 {
 		if isPrimeYear(int32(i)) {
 			benefits += i
 		}
 	}
-
 
 	return int32(benefits)
 }

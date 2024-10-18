@@ -13,10 +13,10 @@ func perfectNumberList(n int32) string {
 		}
 	}
 
-	if len(answer) == 0{
+	if len(answer) == 0 {
 		return "none"
 	}
-	return answer[0: len(answer)-1]
+	return answer[0 : len(answer)-1]
 }
 
 func isPerfectNumber(n int32) bool {

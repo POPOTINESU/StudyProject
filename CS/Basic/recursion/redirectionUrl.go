@@ -1,8 +1,6 @@
 package main
 
-import (
-	// "fmt"
-)
+// "fmt"
 
 func redirectionUrl(language string) string {
 	switch language {

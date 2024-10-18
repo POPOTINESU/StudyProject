@@ -1,18 +1,18 @@
 package main
 
 func howLongToReachFundGoal(capitalMoney int32, goalMoney int32, interest int32) int32 {
-	if capitalMoney >= goalMoney{
+	if capitalMoney >= goalMoney {
 		return 0
 	}
 	return howLongToReachFundGoalHelper(0, float64(capitalMoney), float64(goalMoney), interest)
 }
 
 func howLongToReachFundGoalHelper(year int32, capitalMoney float64, goalMoney float64, interest int32) int32 {
-	
+
 	if capitalMoney >= goalMoney {
 		return year
 	}
-	
+
 	if year >= 80 {
 		return 80
 	}

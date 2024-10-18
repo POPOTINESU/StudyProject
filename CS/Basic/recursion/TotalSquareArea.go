@@ -9,7 +9,7 @@ func totalSquareArea(x int32) int32 {
 		return 0
 	}
 
-	return totalSquareArea(x-1) + int32(calculateSquareArea(int(x))) * x
+	return totalSquareArea(x-1) + int32(calculateSquareArea(int(x)))*x
 }
 
 func calculateSquareArea(side int) int {
