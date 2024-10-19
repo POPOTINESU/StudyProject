@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include <math.h>
+#include <cmath>
 
 using namespace std;
 
@@ -37,7 +37,8 @@ public:
 private:
     double truncateTo2DecimalPlaces(double decimalNumber) const
     {
-        return floor(decimalNumber * 100) / 100;
+        static constexpr double factor = 100.0;
+        return floor(decimalNumber * factor) / factor;
     }
 };
 
