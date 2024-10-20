@@ -9,6 +9,7 @@ using namespace std;
 
 int convertCardToNums(string cardString)
 {
+    // スート文字が3バイト(UTF-8の絵文字)であるため、4バイト目から取得
     string targetNum = cardString.substr(3);
     vector<string> cardNums = {"A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"};
 
