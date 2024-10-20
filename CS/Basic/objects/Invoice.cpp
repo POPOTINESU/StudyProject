@@ -16,47 +16,65 @@ public:
 class InvoiceItem
 {
 public:
-    Product *product;
     int quantity;
+    Product product;
     InvoiceItem *next;
 
-    InvoiceItem(Product *product, int quantity)
-    {
-        this->product = product;
-        this->quantity = quantity;
-        this->next = NULL;
-    }
+    InvoiceItem(Product product, int quantity)
+        : product(product), quantity(quantity), next(NULL) {}
 
     double getTotalPrice()
     {
+        return product.price * quantity;
+    }
+};
 
-        return product->price * quantity;
+class Invoice
+{
+public:
+    string invoiceNumber;
+    InvoiceItem *invoiceItemHead;
+
+    Invoice(string invoiceNumber, InvoiceItem invoiceItemHead)
+        : invoiceNumber(invoiceNumber), invoiceItemHead(&invoiceItemHead) {}
+
+    double amountDue(bool taxes)
+    {   
+        const double TAX_RATE = 0.1;
+
+        InvoiceItem *currentProduct = invoiceItemHead;
+        double totalPrice = 0;
+
+        while (currentProduct != NULL)
+        {
+            totalPrice += currentProduct->getTotalPrice();
+
+            currentProduct = currentProduct->next;
+        }
+        return (taxes) ? totalPrice * (1+TAX_RATE) : totalPrice;
     }
 };
 
 void entry()
 {
-    Product *product1 = new Product("shampoo", 10);
-    Product *product2 = new Product("conditioner", 5);
-    Product *product3 = new Product("tooth brush", 3);
+    Product product1("shampoo", 10);
+    Product product2("conditioner", 5);
+    Product product3("tooth brush", 3);
 
-    InvoiceItem *firstItem = new InvoiceItem(product1, 7);
-    InvoiceItem *secondItem = new InvoiceItem(product2, 9);
-    InvoiceItem *thirdItem = new InvoiceItem(product3, 10);
+    InvoiceItem firstItem(product1, 7);
+    InvoiceItem secondItem(product2, 9);
+    InvoiceItem thirdItem(product3, 10);
 
-    firstItem->next = secondItem;
-    secondItem->next = thirdItem;
+    firstItem.next = &secondItem;
+    secondItem.next = &thirdItem;
 
-    cout << firstItem->getTotalPrice() << endl;
-    cout << secondItem->getTotalPrice() << endl;
-    cout << firstItem->next->getTotalPrice() << endl;
-    cout << firstItem->next->next->getTotalPrice() << endl;
-    cout << firstItem->next->product->price << endl;
-    cout << firstItem->next->next->product->title << endl;
+    Invoice invoice("UC1234567890", firstItem);
+
+    cout << invoice.amountDue(false) << endl;
+    cout << invoice.amountDue(true) << endl;
 }
 
-int main()
-{
+int main(){
     entry();
     return 0;
 }
