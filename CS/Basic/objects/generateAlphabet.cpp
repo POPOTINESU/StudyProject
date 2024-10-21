@@ -9,26 +9,28 @@ using namespace std;
 
 vector<char> generateAlphabet(char firstAlphabet, char secondAlphabet)
 {
-    // charのa~zの範囲に確実に収まっている前提の関数である
-    int firstAlphabetNumber = (char)tolower(firstAlphabet);
-    int secondAlphabetNumber = (char)tolower(secondAlphabet);
+    firstAlphabet = (char)tolower(firstAlphabet);
+    secondAlphabet = (char)tolower(secondAlphabet);
 
     // secondの方が大きかったらsecondからカウントする
-    if (secondAlphabetNumber > firstAlphabetNumber)
+    if (firstAlphabet > secondAlphabet)
     {
-        firstAlphabetNumber, secondAlphabetNumber = secondAlphabetNumber, firstAlphabetNumber;
+        char temp = firstAlphabet;
+        firstAlphabet = secondAlphabet;
+        secondAlphabet = temp;
     }
 
     string alphabet = "abcdefghijklmnopqrstuvwxyz";
     vector<char> stopedStations;
-    for (int i = firstAlphabetNumber-'a'; i <= secondAlphabetNumber-'a'; i++)
-    {   
+    for (int i = firstAlphabet - 'a'; i <= secondAlphabet - 'a'; i++)
+    {
         stopedStations.push_back(alphabet[i]);
     }
     return stopedStations;
 }
 
-int main(){
+int main()
+{
     generateAlphabet('a', 'z');
     return 0;
 }
