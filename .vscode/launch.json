@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/koki_shigekuni/Projects/StudyProject/CS/Basic/objects",
-      "program": "/Users/koki_shigekuni/Projects/StudyProject/CS/Basic/objects/build/Debug/outDebug"
+      "cwd": "/Users/koki_shigekuni/Projects/StudyProject/CS/Basic/dp",
+      "program": "/Users/koki_shigekuni/Projects/StudyProject/CS/Basic/dp/build/Debug/outDebug"
     }
   ]
 }
