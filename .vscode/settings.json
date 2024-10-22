@@ -100,6 +100,13 @@
     "typeinfo": "cpp",
     "variant": "cpp",
     "vector": "cpp",
-    "algorithm": "cpp"
+    "algorithm": "cpp",
+    "__node_handle": "cpp",
+    "deque": "cpp",
+    "map": "cpp",
+    "stack": "cpp",
+    "unordered_map": "cpp",
+    "__hash_table": "cpp",
+    "__tree": "cpp"
   }
 }
