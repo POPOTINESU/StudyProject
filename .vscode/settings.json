@@ -109,5 +109,5 @@
     "__hash_table": "cpp",
     "__tree": "cpp"
   },
-  "C_Cpp.errorSquiggles": "disabled"
+  "C_Cpp.errorSquiggles": "enabledIfIncludesResolve"
 }
