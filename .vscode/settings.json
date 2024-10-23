@@ -108,5 +108,6 @@
     "unordered_map": "cpp",
     "__hash_table": "cpp",
     "__tree": "cpp"
-  }
+  },
+  "C_Cpp.errorSquiggles": "disabled"
 }
