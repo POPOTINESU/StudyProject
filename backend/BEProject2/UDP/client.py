@@ -19,7 +19,7 @@ try:
     print(f"sending{message}")
     sent = sock.sendto(message, server_address)
     
-    print("waiting ot receive")
+    print("waiting to receive")
     
     data, server = sock.recvfrom(4096)
     
