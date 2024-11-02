@@ -108,7 +108,8 @@
     "unordered_map": "cpp",
     "__hash_table": "cpp",
     "__tree": "cpp",
-    "iterator": "cpp"
+    "iterator": "cpp",
+    "optional": "cpp"
   },
   "C_Cpp.errorSquiggles": "enabledIfIncludesResolve"
 }
