@@ -50,7 +50,6 @@ SinglyLinkedListNode* reproduceByN(SinglyLinkedListNode* head, int n) {
         }
         currentNode = head;
     }
-    tailNode->next = NULL;
 
     return head;
 }
