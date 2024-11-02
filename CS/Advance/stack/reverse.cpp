@@ -7,38 +7,14 @@
 
 using namespace std;
 
-// ここもスタックは自分で作る
-
 class Item {
    public:
     int data;
     Item *next;
 
-    Item(int data) { this->data = data; }
-
-    Item *getLastItem() {
-        Item *currentItem = this;
-
-        while (currentItem->next != NULL) {
-            currentItem = currentItem->next;
-        }
-        return currentItem;
-    }
-
-    int removeLastItem() {
-        Item *currentItem = this;
-        Item *prevItem = NULL;
-
-        if (currentItem == NULL) return NULL;
-
-        while (currentItem->next != NULL) {
-            prevItem = currentItem;
-            currentItem = currentItem->next;
-        }
-
-        if (prevItem) prevItem->next = NULL;
-
-        return currentItem->data;
+    Item(int data) {
+        this->data = data;
+        this->next = NULL;
     }
 };
 
@@ -49,17 +25,22 @@ class Stack {
     Stack() { this->head = NULL; }
 
     void push(int data) {
-        if (this->head == NULL)
-            this->head = new Item(data);
-        else {
-            Item *lastItem = this->head->getLastItem();
-            lastItem->next = new Item(data);
-        }
+        Item *temp = this->head;
+        this->head = new Item(data);
+        this->head->next = temp;
     }
 
-    int pop() { return this->head->removeLastItem(); }
+    int pop() {
+        if (this->head == NULL) return NULL;
+        Item *temp = this->head;
+        this->head = this->head->next;
+        return temp->data;
+    }
 
-    int peek() { return this->head->getLastItem()->data; }
+    int peek() {
+        if (this->head == NULL) return NULL;
+        return this->head->data;
+    }
 };
 
 vector<int> reverse(vector<int> arr) {
