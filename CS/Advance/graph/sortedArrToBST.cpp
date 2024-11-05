@@ -19,18 +19,27 @@ class BinaryTree {
         this->right = right;
     };
 };
-BinaryTree* sortedArrToBSTHelper(vector<int> numberList, int start, int end) {
-    if (start == end) return new BinaryTree(numberList[start]);
-
-    int center = (start + end) / 2;
-    BinaryTree* left = sortedArrToBSTHelper(numberList, start, center - 1);
-    BinaryTree* right = sortedArrToBSTHelper(numberList, center + 1, end);
-
-    BinaryTree* centerNode = new BinaryTree(numberList[center], left, right);
-
-    return centerNode;
-}
 
 BinaryTree* sortedArrToBST(vector<int> numberList) {
-    return sortedArrToBSTHelper(numberList, 0, numberList.size()-1);
+    if (numberList.size() == 1) return new BinaryTree(numberList[0]);
+
+    int center = numberList.size() / 2;
+    center = (numberList.size() % 2 == 0) ? center - 1 : center;
+
+    BinaryTree* centerNode = new BinaryTree(numberList[center]);
+    BinaryTree* left = nullptr;
+    BinaryTree* right;
+
+    // numberList size 2だった場合必ず、centerとrightに入る
+    if (numberList.size() == 2) {
+        centerNode = new BinaryTree(numberList[0]);
+        centerNode->right = new BinaryTree(numberList[1]);
+    } else {
+        centerNode->left = sortedArrToBST(
+            vector<int>(numberList.begin(), numberList.begin() + center));
+        centerNode->right = sortedArrToBST(
+            vector<int>(numberList.begin() + center + 1, numberList.end()));
+    }
+
+    return centerNode;
 }
