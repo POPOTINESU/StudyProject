@@ -29,6 +29,19 @@ class PriorityQueue {
         return answer;
     }
 
+    void insert(int value) {
+        this->heap.push_back(value);
+        int lastIndex = this->heap.size() - 1;
+        int parentIndex = parent(lastIndex);
+
+        while (parentIndex >= 0 && this->heap[parentIndex] < value) {
+            swap(this->heap[lastIndex], this->heap[parentIndex]);
+
+            lastIndex = parentIndex;
+            parentIndex = parent(lastIndex);
+        }
+    }
+
    private:
     void maxHeapify(vector<int>& arr, int indexEnd, int rootIndex) {
         int largest = rootIndex;
@@ -58,10 +71,8 @@ class PriorityQueue {
 
 void entry() {
     PriorityQueue pq = PriorityQueue(vector<int>{2, 3, 43, 2, 53, 6, 75, 10});
-    cout << pq.pop() << endl;
-    cout << pq.pop() << endl;
-    cout << pq.pop() << endl;
-    cout << pq.pop() << endl;
+    pq.insert(10000);
+    cout << pq.top() << endl;
 }
 
 int main() {
