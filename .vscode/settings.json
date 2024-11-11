@@ -110,7 +110,8 @@
     "__tree": "cpp",
     "iterator": "cpp",
     "optional": "cpp",
-    "queue": "cpp"
+    "queue": "cpp",
+    "functional": "cpp"
   },
   "C_Cpp.errorSquiggles": "enabledIfIncludesResolve",
   "cSpell.words": [
