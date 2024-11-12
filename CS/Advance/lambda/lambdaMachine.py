@@ -1,15 +1,24 @@
-from typing import Any
 import math
+from typing import Any
+
 
 class LambdaMachine:
     def __init__(self) -> None:
         self.handlers = {}
+        self.counter = 0
+        self.lambdaStorage = []
 
     def insert(self, key, callable) -> None:
         self.handlers[key] = callable
+        self.lambdaStorage.append(key)
 
     def retrieve(self, key) -> Any:
         return self.handlers.get(key)
+
+    def roundRobinRetrieve(self) -> Any:
+        func = self.handlers[self.lambdaStorage[self.counter]]
+        self.counter = self.counter + 1 if self.counter < len(self.lambdaStorage)-1 else 0
+        return func
 
 
 # powだとint型でオーバーヘッドがあるため
@@ -20,12 +29,10 @@ multiplication = lambda x, y: x * y
 
 lambdaMachine = LambdaMachine()
 lambdaMachine.insert("pythagora", pythagora)
-print(lambdaMachine.retrieve("pythagora")(3, 4))
 
 lambdaMachine.insert("addition", addition)
-
-print(lambdaMachine.retrieve("addition")(2, 5))
-
 lambdaMachine.insert("multiplication", multiplication)
-
-print(lambdaMachine.retrieve("multiplication")(4, 10))
+print(lambdaMachine.roundRobinRetrieve()(6, 8))
+print(lambdaMachine.roundRobinRetrieve()(6, 8))
+print(lambdaMachine.roundRobinRetrieve()(6, 8))
+print(lambdaMachine.roundRobinRetrieve()(6, 8))
