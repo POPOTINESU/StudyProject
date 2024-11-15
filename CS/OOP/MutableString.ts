@@ -20,13 +20,14 @@ class MutableString {
     if (strArr instanceof MutableString) {
       strArr = strArr.str;
     }
-    strArr.forEach((s: string) => this.str.push(s));
+    this.str = this.str.concat(strArr);
+    console.log(this.str)
     return this.str.join("");
   }
 }
 
 const n: MutableString = new MutableString("aaa");
-console.log(n.substring(1));
+// console.log(n.substring(1));
 
 const m: MutableString = new MutableString("bbb");
 console.log(n.concat(m));
