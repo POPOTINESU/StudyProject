@@ -1,44 +1,48 @@
-interface stack {
-  peekLast(): any;
-  pop(): any;
-  push(value: any): void;
+interface Stack<T> {
+  peekLast(): T | null;
+  pop(): T | null;
+  push(value: T): void;
 }
 
-interface queue {
-  peekFirst(): any;
-  pool(): any;
-  push(value: any): void;
+interface Queue<T> {
+  peekFirst(): T | null;
+  pool(): T | null;
+  push(value: T): void;
 }
 
-class Dequeue implements stack, queue {
-  // 今回はArrayで作成
-  private dequeue: Array<any>;
-  peekLast() {
+class Dequeue<T> implements Stack<T>, Queue<T> {
+  // 今回はArrayで作成、型はTにする
+  private dequeue: T[] = [];
+
+  peekLast(): T | null {
     if (this.isEmpty()) return null;
-
     return this.dequeue[this.dequeue.length - 1];
   }
 
-  peekFirst() {
+  peekFirst(): T | null {
     if (this.isEmpty()) return null;
     return this.dequeue[0];
   }
-  pop() {
+
+  pop(): T | null {
     if (this.isEmpty()) return null;
-    return this.dequeue.pop();
+    return this.dequeue.pop()!;
   }
 
-  pool() {
+  pool(): T | null {
     if (this.isEmpty()) return null;
-    this.dequeue = this.dequeue.slice(1);
-    return this.dequeue.shift();
+    return this.dequeue.shift()!;
   }
 
-  push(value: any): void {
+  push(value: T): void {
     this.dequeue.push(value);
   }
 
   private isEmpty(): boolean {
-    return this.dequeue.length == 0;
+    return this.dequeue.length === 0;
   }
 }
+
+const dequeue = new Dequeue<number>();
+dequeue.push(10);
+console.log(dequeue.peekLast());
