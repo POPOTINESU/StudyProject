@@ -1,2 +1,7 @@
 .venv
 node_modules
+
+*/target/
+*/.cargo/
+*/Cargo.lock
+**/*.rs.bk
