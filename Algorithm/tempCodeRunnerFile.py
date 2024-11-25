@@ -1,1 +1,1 @@
-                print(min_price)
+0
