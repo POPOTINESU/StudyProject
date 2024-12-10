@@ -1,9 +1,6 @@
 class Solution:
     def longestPalindrome(self, s: str) -> str:
-        def preProcess(s: str) -> str:
-            return "^#" + "#".join(s) + "#$"
-
-        palindrome = preProcess(s)
+        palindrome = "^#" + "#".join(s) + "#$"
         halfPalindrome = [0] * len(palindrome)
 
         center = 0
@@ -13,7 +10,6 @@ class Solution:
             if i < right:
                 halfPalindrome[i] = min(right - i, halfPalindrome[2 * center - i])
 
-            # centerごとの回文半径を記録する
             while (
                 palindrome[i + halfPalindrome[i] + 1]
                 == palindrome[i - halfPalindrome[i] - 1]
@@ -22,15 +18,10 @@ class Solution:
 
             if i + halfPalindrome[i] > right:
                 center = i
-                right = halfPalindrome[i]Z
+                right = halfPalindrome[i]
 
         maxPalindromeLength = max(halfPalindrome)
-        startIndex = (
+        start_index = (
             halfPalindrome.index(maxPalindromeLength) - maxPalindromeLength
         ) // 2
-
-        return s[startIndex : startIndex + maxPalindromeLength]
-
-
-s = Solution()
-print(s.longestPalindrome("babad"))
+        return s[start_index : start_index + maxPalindromeLength]
