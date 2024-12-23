@@ -2,15 +2,19 @@ from typing import List
 
 
 class Solution:
-    def maxSubArray(self, nums: List[int]) -> int:
-        if not nums:
-            raise ValueError("nums cannot empty")
+    def longestConsecutive(self, nums: List[int]) -> int:
+        longest_streak = 0
+        num_set = set(nums)
 
-        current_sum = nums[0]
-        max_sum = nums[0]
+        for num in num_set:
+            if num - 1 not in num_set:
+                current_num = num
+                current_streak = 1
 
-        for i in range(1, len(nums)):
-            current_sum = max(current_sum + nums[i], nums[i])
-            max_sum = max(max_sum, current_sum)
+                while current_num + 1 in num_set:
+                    current_num += 1
+                    current_streak += 1
 
-        return max_sum
+                longest_streak = max(longest_streak, current_streak)
+
+        return longest_streak
