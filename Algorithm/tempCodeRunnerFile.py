@@ -1,1 +1,1 @@
-                print(anagram_map[anagram_key])
+            print(f"{left}:{right}")
