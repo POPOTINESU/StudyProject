@@ -1,1 +1,1 @@
-            print(f"{left}:{right}")
+        print(ans)
