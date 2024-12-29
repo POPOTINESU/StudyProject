@@ -5,15 +5,15 @@ class Solution:
     def canJump(self, nums: List[int]) -> bool:
         max_reachable = 0
 
-        for index, max_jump in enumerate(nums):
+        for index, jump in enumerate(nums):
             if index > max_reachable:
                 return False
 
-            max_reachable = max(max_reachable, index + max_jump)
+            max_reachable = max(max_reachable, index + jump)
 
             if max_reachable >= len(nums) - 1:
                 return True
-
+        
         return False
 
 
