@@ -1,1 +1,1 @@
-a
+                  print(nums[p])
