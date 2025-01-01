@@ -3,19 +3,16 @@ from typing import List
 
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
-        if not prices:
-            return 0
-
-        min_prices = 10001
         max_profit = 0
+        min_price = 100001
 
-        for i in range(len(prices)):
-            if min_prices > prices[i]:
-                min_prices = prices[i]
+        for price in prices:
+            if price < min_price:
+                min_price = price
             else:
-                max_profit = max(max_profit, prices[i] - min_prices)
+                max_profit = max(max_profit, price - min_price)
 
-        return max_profit
+        return int(max_profit)
 
 
 s = Solution()

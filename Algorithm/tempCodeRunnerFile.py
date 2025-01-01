@@ -1,1 +1,1 @@
-                  print(nums[p])
+                max_substring = max(max_substring, len(substring))
