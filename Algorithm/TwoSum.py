@@ -3,13 +3,12 @@ from typing import List
 
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        index_map = {}
+        dict = {}
 
-        for i, n in enumerate(nums):
-            diff = target - n
-            if diff in index_map:
-                return [index_map[diff], i]
+        for index in range(len(nums)):
+            diff = target - nums[index]
+            if diff in dict:
+                return [dict[diff], index]
+            dict[nums[index]] = index
 
-            index_map[n] = i
-
-        return []  # target pare is not found
+        return []
