@@ -1,5 +1,5 @@
 def selectionSort(total):
-    items = list(map(int, input().split(" ")))
+    items = list(map(str, input().split(" ")))
 
     for i in range(total):
         swap_index = i
