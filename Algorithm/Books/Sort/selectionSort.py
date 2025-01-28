@@ -1,14 +1,14 @@
 def selectionSort(total):
     items = list(map(int, input().split(" ")))
 
-    for i in range(len(items)):
-        min_index = i
+    for i in range(total):
+        swap_index = i
+        for j in range(i, total):
+            if items[swap_index] > items[j]:
+                swap_index = j
 
-        for j in range(i, len(items)):
-            if items[min_index] > items[j]:
-                min_index = j
+        items[i], items[swap_index] = items[swap_index], items[i]
 
-        items[min_index], items[i] = items[i], items[min_index]
     print(items)
 
 
