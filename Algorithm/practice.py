@@ -1,20 +1,16 @@
-def insert_sort(items: list) -> list:
-    total = len(items)
+def maximum_profit(amounts: list[int]) -> int:
+    max_profit = -200_000
+    min_buy_price = 1_000_000_001
 
-    for current_index in range(1, total):
-        target = items[current_index]
-        sorted_index = current_index - 1
+    for amount in amounts:
+        max_profit = max(max_profit, amount - min_buy_price)
+        min_buy_price = min(amount, min_buy_price)
 
-        while sorted_index >= 0 and items[sorted_index] > target:
-            items[sorted_index + 1] = items[sorted_index]
-            sorted_index -= 1
-
-        items[sorted_index + 1] = target
-
-    return items
+    return max_profit
 
 
 if __name__ == "__main__":
-    total = int(input())
-    items = list(map(int, input().split(" ")))
-    print(insert_sort(items))
+    days = int(input())
+    amounts = list(map(int, input().split(" ")))
+
+    maximum_profit(amounts)
