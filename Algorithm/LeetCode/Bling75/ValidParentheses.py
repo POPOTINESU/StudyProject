@@ -1,17 +1,29 @@
+from typing import Optional
+
+
+# Definition for singly-linked list.
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+
+
 class Solution:
-    def isValid(self, s: str) -> bool:
-        stack = []
-        pairs = {")": "(", "]": "[", "}": "{"}
+    def mergeTwoLists(
+        self, list1: Optional[ListNode], list2: Optional[ListNode]
+    ) -> Optional[ListNode]:
+        dummy = ListNode()
+        tail = dummy
 
-        for char in s:
-            if char in pairs.values():
-                stack.append(char)
+        while list1 and list2:
+            if list1.val < list2.val:
+                tail.next = list1
+                list1 = list1.next
             else:
-                if not stack or stack.pop() not in pairs[char]:
-                    return False
+                tail.next = list2
+                list2 = list2.next
+            tail = tail.next
 
-        return not stack
+        tail.next = list1 if list1 else list2
 
-
-s = Solution()
-s.isValid("()")
+        return dummy.next
