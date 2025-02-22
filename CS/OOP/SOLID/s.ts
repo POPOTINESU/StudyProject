@@ -44,36 +44,3 @@ class Auth {
     // ログアウト機能
   }
 }
-
-// 例3
-
-class Payment {
-  private strategy: PayMethod;
-
-  constructor(strategy: PayMethod) {
-    this.strategy = strategy;
-  }
-
-  confirmOrder(billingInfo: string, orderInfo: string) {
-    this.strategy.confirm(billingInfo, orderInfo);
-  }
-
-  cancel(id: string) {
-    this.strategy.cancel(id);
-  }
-}
-
-class PayMethod {
-  confirm(billingInfo: string, orderInfo: string): void {}
-  cancel(id: string): void {}
-}
-
-class PayPay {
-  confirm(billingInfo: string, orderInfo: string): void {}
-  cancel(id: string): void {}
-}
-
-class Credit {
-  confirm(billingInfo: string, orderInfo: string): void {}
-  cancel(id: string): void {}
-}
